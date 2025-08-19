@@ -52,6 +52,15 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				temperature: {
+					warm: 'hsl(var(--temperature-warm))',
+					hot: 'hsl(var(--temperature-hot))',
+					cold: 'hsl(var(--temperature-cold))'
+				},
+				humidity: {
+					low: 'hsl(var(--humidity-low))',
+					high: 'hsl(var(--humidity-high))'
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -67,6 +76,17 @@ export default {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
+			},
+			backgroundImage: {
+				'gradient-dashboard': 'var(--gradient-dashboard)',
+				'gradient-card': 'var(--gradient-card)',
+				'gradient-temperature': 'var(--gradient-temperature)',
+				'gradient-humidity': 'var(--gradient-humidity)'
+			},
+			boxShadow: {
+				'card': 'var(--shadow-card)',
+				'glow-temp': 'var(--shadow-glow-temp)',
+				'glow-humidity': 'var(--shadow-glow-humidity)'
 			},
 			keyframes: {
 				'accordion-down': {
@@ -84,11 +104,33 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'pulse-glow': {
+					'0%, 100%': { 
+						opacity: '1',
+						transform: 'scale(1)'
+					},
+					'50%': { 
+						opacity: '0.8',
+						transform: 'scale(1.02)'
+					}
+				},
+				'slide-up': {
+					'0%': {
+						opacity: '0',
+						transform: 'translateY(20px)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'translateY(0)'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
+				'slide-up': 'slide-up 0.5s ease-out'
 			}
 		}
 	},
